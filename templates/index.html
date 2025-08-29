@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Speech Recognition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #controls {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        #transcription {
+            border: 1px solid #ccc;
+            padding: 15px;
+            min-height: 200px;
+            font-size: 18px;
+            line-height: 1.5;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+        .partial {
+            color: #666;
+            font-style: italic;
+        }
+        .final {
+            color: #000;
+            font-weight: bold;
+        }
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #4a6fa5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        #status {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .info-box {
+            background-color: #eef7ff;
+            border-left: 4px solid #4a6fa5;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>English Speech Recognition</h1>
+    
+    <div class="info-box">
+        <p>This system uses Vosk's English model (0.15) for speech recognition.</p>
+        <p>Click "Start Recognition" and speak clearly into your microphone.</p>
+    </div>
+    
+    <div id="status">Status: Connecting...</div>
+    
+    <div id="controls">
+        <button id="startBtn" disabled>Start Recognition</button>
+        <button id="stopBtn" disabled>Stop Recognition</button>
+    </div>
+    
+    <div id="transcription"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

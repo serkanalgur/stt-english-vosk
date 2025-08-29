@@ -1,0 +1,5 @@
+flask
+flask-socketio
+vosk==0.3.31
+gevent
+gevent-websocket
